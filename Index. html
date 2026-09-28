@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diego Executive OS v2026 - Interactive Resume</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card:hover {
+            border-color: rgba(56, 189, 248, 0.4);
+            box-shadow: 0 0 25px rgba(2, 132, 199, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans min-h-screen selection:bg-sky-500 selection:text-white">
+
+    <div class="fixed inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute -top-40 -left-40 w-96 h-96 bg-sky-500/20 rounded-full blur-3xl"></div>
+        <div class="absolute top-1/2 -right-40 w-96 h-96 bg-indigo-500/15 rounded-full blur-3xl"></div>
+        <div class="absolute -bottom-40 left-1/3 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="max-w-4xl mx-auto px-4 py-6 md:py-10 relative z-10">
+
+        <header class="glass-panel rounded-2xl p-4 mb-6 flex items-center justify-between shadow-2xl">
+            <div class="flex items-center space-x-3">
+                <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                <div class="w-3 h-3 rounded-full bg-emerald-500/80"></div>
+                <span class="text-xs font-mono text-slate-400 ml-2">DIEGO_EXECUTIVE_OS_v2026</span>
+            </div>
+            <span class="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
+                ● En Línea
+            </span>
+        </header>
+
+        <div class="glass-panel rounded-3xl p-6 md:p-8 mb-6 relative overflow-hidden">
+            <div class="flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
+                <div class="relative">
+                    <div class="w-28 h-28 md:w-32 md:h-32 rounded-2xl bg-gradient-to-tr from-sky-500 to-indigo-600 p-1 shadow-xl">
+                        <div class="w-full h-full bg-slate-900 rounded-[14px] flex items-center justify-center text-sky-400 text-4xl font-extrabold">
+                            DB
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex-1">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-400 text-xs font-semibold mb-2">
+                        Perfil Profesional Verificado
+                    </div>
+                    <h1 class="text-3xl md:text-4xl font-extrabold text-white tracking-tight">Diego Adrián Bisquierra</h1>
+                    <p class="text-sky-400 font-medium text-base md:text-lg mt-1">Especialista en Transporte, Logística & Operaciones Técnicas</p>
+
+                    <div class="flex flex-wrap items-center justify-center md:justify-start gap-3 mt-4 text-xs text-slate-300">
+                        <span class="bg-slate-800/80 px-3 py-1.5 rounded-lg border border-slate-700">Rosario, Santa Fe</span>
+                        <a href="tel:3413943015" class="bg-slate-800/80 px-3 py-1.5 rounded-lg border border-slate-700 hover:border-sky-500 transition">Tel: 341-3943015</a>
+                        <a href="mailto:deymix@gmail.com" class="bg-slate-800/80 px-3 py-1.5 rounded-lg border border-slate-700 hover:border-sky-500 transition">Email: deymix@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex gap-2 mb-6 overflow-x-auto pb-2">
+            <button onclick="switchTab('tab-perfil')" id="btn-tab-perfil" class="tab-btn px-4 py-2.5 rounded-xl bg-sky-500 text-white font-semibold text-sm whitespace-nowrap shadow-lg shadow-sky-500/20">Resumen & Perfil</button>
+            <button onclick="switchTab('tab-licencias')" id="btn-tab-licencias" class="tab-btn px-4 py-2.5 rounded-xl bg-slate-800/80 text-slate-300 font-semibold text-sm whitespace-nowrap border border-slate-700">Licencias & Certificaciones</button>
+            <button onclick="switchTab('tab-experiencia')" id="btn-tab-experiencia" class="tab-btn px-4 py-2.5 rounded-xl bg-slate-800/80 text-slate-300 font-semibold text-sm whitespace-nowrap border border-slate-700">Trayectoria Laboral</button>
+            <button onclick="switchTab('tab-educacion')" id="btn-tab-educacion" class="tab-btn px-4 py-2.5 rounded-xl bg-slate-800/80 text-slate-300 font-semibold text-sm whitespace-nowrap border border-slate-700">Formación Académica</button>
+        </div>
+
+        <div id="tab-perfil" class="tab-content block space-y-6">
+            <div class="glass-card rounded-2xl p-6">
+                <h2 class="text-xl font-bold text-white mb-3">Perfil Ejecutivo</h2>
+                <p class="text-slate-300 leading-relaxed text-sm md:text-base">Profesional con sólida trayectoria en conducción profesional, logística urbana e interurbana, mantenimiento técnico e integración de tecnologías digitales e Inteligencia Artificial para optimizar procesos operativos.</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="glass-card p-4 rounded-2xl text-center"><div class="text-sky-400 text-2xl font-black">D.2 / D.3</div><div class="text-xs text-slate-400 mt-1">Licencias Profesionales</div></div>
+                <div class="glass-card p-4 rounded-2xl text-center"><div class="text-emerald-400 text-2xl font-black">AHA / RCP</div><div class="text-xs text-slate-400 mt-1">Primeros Auxilios</div></div>
+                <div class="glass-card p-4 rounded-2xl text-center"><div class="text-indigo-400 text-2xl font-black">+10 Años</div><div class="text-xs text-slate-400 mt-1">Movilidad & Logística</div></div>
+                <div class="glass-card p-4 rounded-2xl text-center"><div class="text-purple-400 text-2xl font-black">IA & Tech</div><div class="text-xs text-slate-400 mt-1">Prompt Engineering</div></div>
+            </div>
+        </div>
+
+        <div id="tab-licencias" class="tab-content hidden space-y-4">
+            <div class="glass-card p-6 rounded-2xl border-l-4 border-l-sky-500"><h3 class="text-lg font-bold text-white">Licencias D.2 y D.3</h3><p class="text-slate-300 text-sm mt-1">Habilitación profesional para transporte de pasajeros y cargas.</p></div>
+            <div class="glass-card p-6 rounded-2xl border-l-4 border-l-emerald-500"><h3 class="text-lg font-bold text-white">Certificación RCP (AHA)</h3><p class="text-slate-300 text-sm mt-1">Avalado por la Municipalidad de Rosario.</p></div>
+            <div class="glass-card p-6 rounded-2xl border-l-4 border-l-purple-500"><h3 class="text-lg font-bold text-white">Inteligencia Artificial Aplicada</h3><p class="text-slate-300 text-sm mt-1">Revolutia AI & Prompt Engineering Avanzado.</p></div>
+        </div>
+
+        <div id="tab-experiencia" class="tab-content hidden space-y-4">
+            <div class="glass-card p-6 rounded-2xl"><h3 class="text-lg font-bold text-white">Conductor Profesional / Movilidad Urbana</h3><p class="text-sky-400 text-xs">2017 – Presente | Rosario, Santa Fe</p></div>
+            <div class="glass-card p-6 rounded-2xl"><h3 class="text-lg font-bold text-white">Chofer de Colectivo Interurbano</h3><p class="text-blue-400 text-xs">2016 – 2017 | Rosario Bus (Línea A)</p></div>
+        </div>
+
+        <div id="tab-educacion" class="tab-content hidden space-y-4">
+            <div class="glass-card p-6 rounded-2xl"><h3 class="text-lg font-bold text-white">Ingeniería en Sistemas</h3><p class="text-indigo-400 text-xs">UTN | 2° año cursado</p></div>
+            <div class="glass-card p-6 rounded-2xl"><h3 class="text-lg font-bold text-white">Técnico Electricista</h3><p class="text-sky-400 text-xs">ENET N° 3 | Rosario, Santa Fe</p></div>
+        </div>
+
+    </div>
+
+    <script>
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(c => { c.classList.add('hidden'); c.classList.remove('block'); });
+            document.querySelectorAll('.tab-btn').forEach(b => { b.classList.remove('bg-sky-500', 'text-white'); b.classList.add('bg-slate-800/80', 'text-slate-300'); });
+            document.getElementById(tabId).classList.remove('hidden');
+            document.getElementById(tabId).classList.add('block');
+            document.getElementById('btn-' + tabId).classList.remove('bg-slate-800/80', 'text-slate-300');
+            document.getElementById('btn-' + tabId).classList.add('bg-sky-500', 'text-white');
+        }
+    </script>
+</body>
+</html>
